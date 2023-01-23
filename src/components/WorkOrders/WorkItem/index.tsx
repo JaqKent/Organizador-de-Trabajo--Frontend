@@ -3,7 +3,7 @@ import React from 'react';
 function WorkItem() {
     return (
         <div>
-            <h1>WorkItem</h1>
+            <h1>Work Item</h1>
         </div>
     );
 }

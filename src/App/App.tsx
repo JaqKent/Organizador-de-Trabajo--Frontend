@@ -5,7 +5,6 @@ import { ROUTES } from './constants';
 import NotFound from './NotFound';
 
 import NavBar from '~components/NavBar';
-import WorkOrders from '~components/WorkOrders';
 
 function App() {
     return (

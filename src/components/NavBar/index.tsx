@@ -12,7 +12,7 @@ function NavBar() {
         navigate('/workorders');
     };
     const handleIncidencias = () => {
-        navigate('/');
+        navigate('/incidencias');
     };
     const handleCronograma = () => {
         navigate('/');

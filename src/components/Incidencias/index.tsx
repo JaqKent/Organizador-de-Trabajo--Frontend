@@ -1,12 +1,12 @@
 import React from 'react';
 
 import CustomTabs from '~components/CustomTabs';
-import { WORKITEMS } from '~constants/constants';
+import { INCIDENCIAS } from '~constants/constants';
 
-function WorkOrders() {
+function Incidencias() {
     return (
         <div>
-            {WORKITEMS.map((item) => (
+            {INCIDENCIAS.map((item) => (
                 <CustomTabs
                     title1={item.title1}
                     event1={item.event1}
@@ -28,4 +28,4 @@ function WorkOrders() {
     );
 }
 
-export default WorkOrders;
+export default Incidencias;
