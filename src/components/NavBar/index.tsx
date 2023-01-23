@@ -1,10 +1,8 @@
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/esm/Button';
-import Form from 'react-bootstrap/esm/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 
 import styles from './styles.module.scss';
+
+import Log from '~assets/login.png';
 
 function NavBar() {
     return (
@@ -28,6 +26,12 @@ function NavBar() {
                     <Button variant="outline-light">Buscar</Button>
                 </Form>
             </Container>
+            <div className={styles.log}>
+                <img className={styles.img} src={Log} alt="imagen de perfil" />
+                <div className={styles.text}>
+                    <h6>Log out</h6>
+                </div>
+            </div>
         </Navbar>
     );
 }

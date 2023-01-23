@@ -5,3 +5,23 @@
     height: 60px;
     font-size: 30px;
 }
+
+.log {
+    @include flex(center, center, row);
+}
+
+.text {
+    color: white;
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(190, 178, 178);
+    }
+}
+
+.img {
+
+    height: 30px;
+    width: auto;
+}
