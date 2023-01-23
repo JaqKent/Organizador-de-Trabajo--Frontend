@@ -1,22 +1,45 @@
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/esm/Button';
-import Form from 'react-bootstrap/esm/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
+import Log from '~assets/login.png';
+
 function NavBar() {
+    const navigate = useNavigate();
+
+    const handleWork = () => {
+        navigate('/workorders');
+    };
+    const handleIncidencias = () => {
+        navigate('/');
+    };
+    const handleCronograma = () => {
+        navigate('/');
+    };
+    const handleAlarmas = () => {
+        navigate('/');
+    };
+
     return (
         <Navbar bg="primary" variant="dark">
             <Container className={styles.container}>
                 <Nav className="me-auto">
-                    <Nav.Link href="#Work Orders">Work Orders</Nav.Link>
-                    <Nav.Link href="#Incidencias">Incidencias</Nav.Link>
-                    <Nav.Link href="#Cronograma de Ventanas">
+                    <Nav.Link onClick={handleWork} href="#Work Orders">
+                        Work Orders
+                    </Nav.Link>
+                    <Nav.Link onClick={handleIncidencias} href="#Incidencias">
+                        Incidencias
+                    </Nav.Link>
+                    <Nav.Link
+                        onClick={handleCronograma}
+                        href="#Cronograma de Ventanas"
+                    >
                         Cronograma de Ventanas
                     </Nav.Link>
-                    <Nav.Link href="#Alarmas">Alarmas</Nav.Link>
+                    <Nav.Link onClick={handleAlarmas} href="#Alarmas">
+                        Alarmas
+                    </Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                     <Form.Control
@@ -28,6 +51,12 @@ function NavBar() {
                     <Button variant="outline-light">Buscar</Button>
                 </Form>
             </Container>
+            <div className={styles.log}>
+                <img className={styles.img} src={Log} alt="imagen de perfil" />
+                <div className={styles.text}>
+                    <h6>Log out</h6>
+                </div>
+            </div>
         </Navbar>
     );
 }
