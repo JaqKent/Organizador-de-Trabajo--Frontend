@@ -16,7 +16,19 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
-    "paths": {"~/*": ["./"], "~components/*": ["./components/*"]},
+    "paths": {
+            "~/*": ["./"],
+            "~components/*": ["./components/*"],
+            "~context/*": ["./context/*"],
+            "~assets/*": ["./assets/*"],
+            "~scss/*": ["./scss/*"],
+            "~screens/*": ["./screens/*"],
+            "~hooks/*": ["./hooks/*"],
+            "~interfaces/*": ["./interfaces/*"],
+            "~constants/*": ["./constants/*"],
+            "~services/*": ["./services/*"],
+            "~configs/*": ["./configs/*"]
+        }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
