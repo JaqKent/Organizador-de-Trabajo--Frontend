@@ -2,15 +2,17 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import { ROUTES } from './constants';
+import NotFound from './NotFound';
 
 import NavBar from '~components/NavBar';
+import WorkOrders from '~components/WorkOrders';
 
 function App() {
     return (
         <>
             <ToastContainer />
-            <NavBar />
             <Router>
+                <NavBar />
                 <Routes>
                     {ROUTES.map((route) => (
                         <Route
@@ -19,6 +21,7 @@ function App() {
                             element={route.element}
                         />
                     ))}
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
         </>
