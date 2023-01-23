@@ -24,7 +24,7 @@ function NavBar() {
     return (
         <Navbar bg="primary" variant="dark">
             <Container className={styles.container}>
-                <Nav className="me-auto">
+                <Nav className="flex-grow-1 justify-content-around">
                     <Nav.Link onClick={handleWork} href="#Work Orders">
                         Work Orders
                     </Nav.Link>
@@ -41,7 +41,7 @@ function NavBar() {
                         Alarmas
                     </Nav.Link>
                 </Nav>
-                <Form className="d-flex">
+                <Form className="d-flex justify-content-end">
                     <Form.Control
                         type="search"
                         placeholder="Buscar"
