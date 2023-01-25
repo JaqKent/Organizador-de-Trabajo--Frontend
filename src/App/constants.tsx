@@ -1,3 +1,4 @@
+import CustomLogIn from '~components/CustomLogIn';
 import Incidencias from '~components/Incidencias';
 import WorkOrders from '~components/WorkOrders';
 
@@ -5,7 +6,7 @@ export const ROUTES = [
     {
         id: 1,
         path: '/',
-        element: '¡Home!',
+        element: <CustomLogIn />,
     },
     {
         id: 2,
