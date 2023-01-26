@@ -1,9 +1,11 @@
+import styles from './styles.module.scss';
+
 function CustomLogIn() {
     return (
-        <div className="Auth-form-container">
-            <form className="Auth-form">
-                <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign In</h3>
+        <div className={styles.logContainer}>
+            <form className={styles.logForm}>
+                <div className={styles.logContent}>
+                    <h3 className={styles.logTitle}>Sign In</h3>
                     <div className="form-group mt-3">
                         <label htmlFor="email">
                             <input
@@ -18,14 +20,15 @@ function CustomLogIn() {
                     <div className="form-group mt-3">
                         <label htmlFor="pass">
                             <input
-                            id="pass"
-                            type="password"
-                            className="form-control mt-1"
-                            placeholder="Enter password"
-                        />Password</label>
-                        
+                                id="pass"
+                                type="password"
+                                className="form-control mt-1"
+                                placeholder="Enter password"
+                            />
+                            Password
+                        </label>
                     </div>
-                    <div className="d-grid gap-2 mt-3">
+                    <div className="d-flex mt-3">
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
