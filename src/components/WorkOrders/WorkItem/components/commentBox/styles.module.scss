@@ -1,0 +1,30 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.comment {
+    @include flex(space-between, center, column);
+    height: 100px;
+    margin: 40px;
+    width: 400px;
+    background-color: white;
+
+
+
+}
+
+.breakLine {
+    border-bottom: 1px solid black;
+    width: 400px;
+}
+
+.top {
+    @include flex(space-between, space-between, row);
+    width: 300px;
+    border-radius: 10px 10px 0 0;
+}
+
+.text {
+    @include flex(center, center, column);
+    text-align: center;
+    border-bottom: 1px solid black;
+}
