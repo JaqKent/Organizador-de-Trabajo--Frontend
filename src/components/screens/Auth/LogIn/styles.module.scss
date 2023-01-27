@@ -1,0 +1,27 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.logContainer {
+    @include flex (center, center, column);
+    width: 90vw;
+    height: 70vh;
+}
+
+.logContent {
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.logTitle {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}

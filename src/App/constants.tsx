@@ -1,11 +1,18 @@
 import Incidencias from '~components/Incidencias';
+import LogIn from '~components/screens/Auth/LogIn';
+import LogOut from '~components/screens/Auth/LogOut';
 import WorkOrders from '~components/WorkOrders';
 
 export const ROUTES = [
     {
-        id: 1,
+        id: 0,
         path: '/',
-        element: '¡Home!',
+        element: 'Home',
+    },
+    {
+        id: 1,
+        path: '/login',
+        element: <LogIn />,
     },
     {
         id: 2,
@@ -16,5 +23,10 @@ export const ROUTES = [
         id: 3,
         path: '/incidencias',
         element: <Incidencias />,
+    },
+    {
+        id: 4,
+        path: '/logout',
+        element: <LogOut />,
     },
 ];
