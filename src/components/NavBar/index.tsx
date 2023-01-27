@@ -20,6 +20,9 @@ function NavBar() {
     const handleAlarmas = () => {
         navigate('/');
     };
+    const handleLogOut = () => {
+        navigate('/logout');
+    };
 
     return (
         <Navbar bg="primary" variant="dark">
@@ -53,7 +56,13 @@ function NavBar() {
             </Container>
             <div className={styles.log}>
                 <img className={styles.img} src={Log} alt="imagen de perfil" />
-                <div className={styles.text}>
+                <div
+                    onClick={handleLogOut}
+                    onKeyDown={handleLogOut}
+                    role="button"
+                    tabIndex={0}
+                    className={styles.text}
+                >
                     <h6>Log out</h6>
                 </div>
             </div>
