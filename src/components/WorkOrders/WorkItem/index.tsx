@@ -4,7 +4,7 @@ import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 import { COMMENTS } from '../constants';
 
-import CommentBox from './components/commentBox';
+import CommentBox from './components/comment';
 
 import 'react-quill/dist/quill.snow.css';
 import styles from './styles.module.scss';

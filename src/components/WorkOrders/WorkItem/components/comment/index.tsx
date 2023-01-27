@@ -13,8 +13,8 @@ function CommentBox({ text, date, user }: Props) {
                 <div>{user} </div>
                 <div>{date}</div>
             </div>
-            <div className={styles.text}>{text}</div>{' '}
             <div className={styles.breakLine} />
+            <div className={styles.text}>{text}</div>{' '}
         </div>
     );
 }

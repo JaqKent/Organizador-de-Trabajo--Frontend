@@ -2,29 +2,29 @@
 @import '~scss/variable';
 
 .comment {
-    @include flex(space-between, center, column);
-    height: 100px;
+    @include flex(space-around, center, column);
+    height: 150px;
     margin: 40px;
     width: 400px;
     background-color: white;
 
-
-
 }
 
-.breakLine {
-    border-bottom: 1px solid black;
-    width: 400px;
-}
+
 
 .top {
     @include flex(space-between, space-between, row);
     width: 300px;
     border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid black;
+    width: 400px;
+    padding: 0 10px 0 10px;
+    ;
 }
 
 .text {
-    @include flex(center, center, column);
-    text-align: center;
-    border-bottom: 1px solid black;
+    width: 400px;
+    padding: 15px;
+    ;
+    overflow-y: auto;
 }

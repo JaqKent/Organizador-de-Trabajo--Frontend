@@ -7,7 +7,7 @@ export const COMMENTS = [
     },
     {
         id: 2,
-        text: 'Commentario de prueba 2',
+        text: 'Commentario de prueba 2,con mas texto para probar el overflow as as das dasd asd asd ss mas y mas y mas y mas texto, Commentario de prueba 2,con mas texto para probar el overflow as as das dasd asd asd ss mas y mas y mas y mas texto',
         date: '15/02/2023',
         user: 'user 02',
     },
