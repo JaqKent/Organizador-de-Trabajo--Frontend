@@ -13,11 +13,6 @@
 
 }
 
-.editor {
-    background-color: white !important;
-    ;
-}
-
 .low {
     @include flex(center, center, column);
     gap: 15px;

@@ -12,9 +12,9 @@ interface Props {
     title3: string;
     children3?: React.ReactNode;
     event3: string;
-    title4: string;
+    title4?: string;
     children4?: React.ReactNode;
-    event4: string;
+    event4?: string;
     defaultEvent?: string;
 }
 

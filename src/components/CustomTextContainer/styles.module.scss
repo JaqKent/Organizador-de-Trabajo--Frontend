@@ -1,0 +1,19 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(flex-start, center, column);
+    gap: 20px;
+    width: 500px;
+    height: auto;
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    border-bottom: 1px solid black;
+
+}
+
+.button {
+    @include flex(flex-end, center, row);
+    width: 500px;
+    padding: 10px;
+}

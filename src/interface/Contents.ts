@@ -4,10 +4,10 @@ export interface Content {
     user: string;
     date: string;
     img: string;
-    text: string;
+    comment: string;
 }
 
-export interface ContentEdit {
-    item: any;
-    edit: boolean;
+export interface Description {
+    id?: string;
+    text: string;
 }
