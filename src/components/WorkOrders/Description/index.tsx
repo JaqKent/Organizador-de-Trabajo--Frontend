@@ -1,8 +1,9 @@
-import React from 'react';
+import 'react-quill/dist/quill.snow.css';
+import styles from './styles.module.scss';
 
 function CustomDescription() {
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Descripcion</h1>
         </div>
     );

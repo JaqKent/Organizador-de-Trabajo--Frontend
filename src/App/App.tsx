@@ -5,10 +5,11 @@ import { ROUTES } from './constants';
 import NotFound from './NotFound';
 
 import NavBar from '~components/NavBar';
+import { ContentProvider } from '~context/contentContext/contentContext';
 
 function App() {
     return (
-        <>
+        <ContentProvider>
             <ToastContainer />
             <Router>
                 <NavBar />
@@ -23,7 +24,7 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
-        </>
+        </ContentProvider>
     );
 }
 
