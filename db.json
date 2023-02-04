@@ -1,0 +1,18 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "comment": "Commentario de prueba 1",
+      "date": "02/02/2023",
+      "user": "user 01",
+      "img": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    },
+    {
+      "comment": "<p>comment de prueba</p>",
+      "date": "2023-01-01",
+      "user": "DefaultUser",
+      "img": "https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg",
+      "id": 4
+    }
+  ]
+}

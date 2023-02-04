@@ -1,20 +1,48 @@
+/* eslint-disable react/prop-types */
+import { useContext } from 'react';
+import { faClose, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import parse from 'html-react-parser';
+
 import styles from './styles.module.scss';
 
-interface Props {
-    text: string;
-    date: string;
-    user: string;
-}
+import ContentContext from '~context/contentContext/contentContext';
 
-function CommentBox({ text, date, user }: Props) {
+function CommentBox({ item }) {
+    const { deleteContent, editContent } = useContext(ContentContext);
     return (
         <div className={styles.comment}>
             <div className={styles.top}>
-                <div>{user} </div>
-                <div>{date}</div>
+                <div className={styles.user}>
+                    <div>
+                        {item.user}
+                        <img
+                            className={styles.img}
+                            src={item.img}
+                            alt={item.user}
+                        />
+                    </div>
+                    <div>
+                        <p>{item.date}</p>
+                    </div>
+                </div>
+                <div className={styles.editClose}>
+                    <div>
+                        <button type="button" onClick={() => editContent(item)}>
+                            <FontAwesomeIcon icon={faEdit} />
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            type="button"
+                            onClick={() => deleteContent(item.id)}
+                        >
+                            <FontAwesomeIcon icon={faClose} />
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div className={styles.breakLine} />
-            <div className={styles.text}>{text}</div>{' '}
+            <div className={styles.text}>{parse(item.comment)}</div>{' '}
         </div>
     );
 }

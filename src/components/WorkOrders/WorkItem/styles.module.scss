@@ -2,13 +2,24 @@
 @import '~scss/variable';
 
 .container {
-    @include flex(center, center, row);
+    @include flex(space-around, center, row);
     gap: 20px;
-    height: 80vh;
 
 }
 
 .editor {
     background-color: white !important;
-    ;
+
+}
+
+.commentContainer {
+    height: 50vh;
+    width: 60vw;
+    overflow-y: auto;
+
+}
+
+.low {
+    @include flex(center, center, column);
+    gap: 15px;
 }

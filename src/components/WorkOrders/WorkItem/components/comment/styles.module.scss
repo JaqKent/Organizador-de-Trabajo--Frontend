@@ -5,26 +5,42 @@
     @include flex(space-around, center, column);
     height: 150px;
     margin: 40px;
-    width: 400px;
     background-color: white;
+    border-bottom: 1px solid black;
+
 
 }
 
-
-
 .top {
     @include flex(space-between, space-between, row);
-    width: 300px;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid black;
-    width: 400px;
+    width: 90%;
     padding: 0 10px 0 10px;
     ;
 }
 
+.img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
 .text {
-    width: 400px;
+    width: 80%;
     padding: 15px;
-    ;
     overflow-y: auto;
+}
+
+.editClose {
+    @include flex(space-between, space-between, row);
+    gap: 20px;
+}
+
+.user {
+    @include flex(space-between, space-between, column);
+
+    p {
+        font-size: 12px;
+    }
+
 }

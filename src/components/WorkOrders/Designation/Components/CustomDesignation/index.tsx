@@ -14,7 +14,7 @@ function CustomDesignation({ label, value1, value2 }: Props) {
             <Form.Select aria-label="Default select example">
                 <option>{label}</option>
                 <option value="1">{value1}</option>
-                <option value="2">{value1}</option>
+                <option value="2">{value2}</option>
             </Form.Select>
         </div>
     );

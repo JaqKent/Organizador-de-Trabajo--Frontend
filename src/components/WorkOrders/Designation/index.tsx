@@ -1,8 +1,9 @@
-import { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useContext, useState } from 'react';
 import ReactQuill from 'react-quill';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
-import { COMMENTS } from '../constants';
 import CommentBox from '../WorkItem/components/comment';
 
 import CustomDesignation from './Components/CustomDesignation';
@@ -12,13 +13,37 @@ import 'react-quill/dist/quill.snow.css';
 import styles from './styles.module.scss';
 
 import ButtonWithIcon from '~components/ButtonWithIcon';
+import ContentContext from '~context/contentContext/contentContext';
 
 function Designation() {
+    const { content, addContent } = useContext(ContentContext);
     const [comment, setComment] = useState('');
+    const [date, setDate] = useState('2023-01-01');
+    const [user, setUser] = useState('DefaultUser');
+    const [img, setImg] = useState(
+        'https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg'
+    );
+    const handleChange = (value: string) => {
+        setComment(value);
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (comment.trim().length > 10) {
+            const newContent = {
+                comment,
+                date,
+                user,
+                img,
+            };
+            addContent(newContent);
+            setComment('');
+        }
+    };
 
     return (
         <>
-            <div>
+            <div className={styles.designation}>
                 {SELECT_DESIGNATION.map((select) => (
                     <CustomDesignation
                         label={select.label}
@@ -28,30 +53,32 @@ function Designation() {
                     />
                 ))}{' '}
             </div>
+
             <div className={styles.container}>
-                <div>
-                    {COMMENTS.map((item) => (
-                        <CommentBox
-                            text={item.text}
-                            date={item.date}
-                            user={item.user}
-                            key={item.id}
+                <div className={styles.commentContainer}>
+                    <div>
+                        {content.map((data) => (
+                            <CommentBox key={data.id} item={data} />
+                        ))}
+                    </div>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.low}>
+                        <div className={styles.editor}>
+                            <ReactQuill
+                                value={comment}
+                                onChange={handleChange}
+                                theme="snow"
+                            />
+                        </div>
+                        <ButtonWithIcon
+                            label="Agregar Comentario"
+                            icon={faSave}
+                            variant="primary"
+                            type="submit"
                         />
-                    ))}
-                </div>
-                <div className={styles.editor}>
-                    <ReactQuill
-                        theme="snow"
-                        value={comment}
-                        onChange={setComment}
-                    />
-                </div>
-                <ButtonWithIcon
-                    label="Guardar"
-                    icon={faSave}
-                    variant="primary"
-                    type="submit"
-                />
+                    </div>
+                </form>
             </div>
         </>
     );

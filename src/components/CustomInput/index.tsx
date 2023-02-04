@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import { Form } from 'react-bootstrap';
 import ReactQuill from 'react-quill';
 
@@ -11,7 +12,7 @@ interface Props {
     pattern?: string;
     title?: string;
     className?: string;
-    onChange?: any;
+    onChange?: () => void;
     value?: string;
     required?: boolean;
 }
