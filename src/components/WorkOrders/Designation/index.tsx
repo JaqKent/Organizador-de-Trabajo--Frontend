@@ -4,8 +4,6 @@ import { useContext, useState } from 'react';
 import ReactQuill from 'react-quill';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
-import CommentBox from '../WorkItem/components/comment';
-
 import CustomDesignation from './Components/CustomDesignation';
 import { SELECT_DESIGNATION } from './constants';
 
@@ -13,6 +11,7 @@ import 'react-quill/dist/quill.snow.css';
 import styles from './styles.module.scss';
 
 import ButtonWithIcon from '~components/ButtonWithIcon';
+import CommentBox from '~components/comment';
 import ContentContext from '~context/contentContext/contentContext';
 
 function Designation() {
@@ -64,7 +63,7 @@ function Designation() {
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.low}>
-                        <div className={styles.editor}>
+                        <div>
                             <ReactQuill
                                 value={comment}
                                 onChange={handleChange}

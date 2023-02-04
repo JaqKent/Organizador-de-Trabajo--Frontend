@@ -1,4 +1,3 @@
-import CustomDates from '../components/WorkOrders/CustomDates';
 import Designation from '../components/WorkOrders/Designation';
 import WorkItem from '../components/WorkOrders/WorkItem';
 
@@ -10,17 +9,14 @@ export const WORKITEMS = [
         id: 1,
         title1: 'N° de orden',
         event1: 'N° de orden',
-        title2: 'Descripcion',
-        event2: 'Descripcion',
-        title3: 'Fecha de Apertura / Modificacion',
-        event3: 'Fecha de Apertura / Modificacion',
-        title4: 'Designación / Estado y Observaciones',
-        event4: 'Designación / Estado y Observaciones',
+        title2: 'Descripcion /Fecha de Apertura / Modificacion',
+        event2: 'Descripcion / Fecha de Apertura / Modificacion',
+        title3: 'Designación / Estado y Observaciones',
+        event3: 'Designación / Estado y Observaciones',
         defaultEvent: 'N° de orden',
         children1: <WorkItem />,
         children2: <CustomDescription />,
-        children3: <CustomDates />,
-        children4: <Designation />,
+        children3: <Designation />,
     },
 ];
 
@@ -38,7 +34,6 @@ export const INCIDENCIAS = [
         defaultEvent: 'N° de Incidencia',
         children1: <IncidenciasItem />,
         children2: <CustomDescription />,
-        children3: <CustomDates />,
-        children4: <Designation />,
+        children3: <Designation />,
     },
 ];

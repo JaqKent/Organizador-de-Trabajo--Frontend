@@ -1,0 +1,23 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(space-around, center, column);
+    gap: 20px;
+    height: 80vh;
+}
+
+.low {
+    @include flex(center, center, column);
+    gap: 15px;
+}
+
+.description {
+    @include flex(center, center, row);
+    gap: 30px;
+}
+
+.dates {
+    @include flex(space-around, center, row);
+    gap: 20px;
+}
