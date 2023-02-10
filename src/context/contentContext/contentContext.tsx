@@ -4,36 +4,47 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { Content, Description } from 'interface/Contents';
+import { Content, Description, Order } from 'interface/Contents';
 
 interface ContextProps {
     content: Content[];
     description: Description[];
+    order: Order[];
+
     addContent: (newContent: any) => void;
     addDescription: (newContent: any) => void;
+    addOrder: (newContent: any) => void;
     deleteContent: (content: any) => void;
     deleteDescription: (content: any) => void;
+    deleteOrder: (content: any) => void;
 }
 
 const ContentContext = createContext<ContextProps>({
     content: [],
     description: [],
+    order: [],
     addContent: () => {},
     addDescription: () => {},
+    addOrder: () => {},
     deleteContent: () => {},
     deleteDescription: () => {},
+    deleteOrder: () => {},
 });
 
 export function ContentProvider({ children }: { children: ReactNode }) {
     /*     const [isLoading, setIsLoading] = useState(true); */
     const [content, setContent] = useState([]);
     const [description, setDescription] = useState([]);
+    const [order, setOrder] = useState([]);
     /*     const [contentEdit, setContentEdit] = useState({
         item: {},
         edit: false,
     }); */
     useEffect(() => {
         fetchContent();
+    }, []);
+    useEffect(() => {
+        fetchOrder();
     }, []);
 
     useEffect(() => {
@@ -48,6 +59,11 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         const response = await fetch(`http://localhost:3000/description`);
         const data = await response.json();
         setDescription(data);
+    };
+    const fetchOrder = async () => {
+        const response = await fetch(`http://localhost:3000/order`);
+        const data = await response.json();
+        setOrder(data);
     };
 
     const addContent = async (newContent: any[]) => {
@@ -72,6 +88,17 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         const data = await response.json();
         setDescription([data, ...description]);
     };
+    const addOrder = async (newDescription: any[]) => {
+        const response = await fetch('http://localhost:3000/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newDescription),
+        });
+        const data = await response.json();
+        setOrder([data, ...order]);
+    };
     const deleteContent = async (id: number) => {
         if (window.confirm('¿Seguro que quieres borrar el comentario?')) {
             await fetch(`http://localhost:3000/content/${id}`, {
@@ -86,6 +113,14 @@ export function ContentProvider({ children }: { children: ReactNode }) {
                 method: 'DELETE',
             });
             setDescription(description.filter((item) => item.id !== id));
+        }
+    };
+    const deleteOrder = async (id: number) => {
+        if (window.confirm('¿Seguro que quieres borrar el Numero de Orden?')) {
+            await fetch(`http://localhost:3000/order/${id}`, {
+                method: 'DELETE',
+            });
+            setOrder(order.filter((item) => item.id !== id));
         }
     };
 
@@ -116,6 +151,9 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         <ContentContext.Provider
             value={{
                 addContent,
+                order,
+                addOrder,
+                deleteOrder,
                 content,
                 description,
                 deleteContent,
