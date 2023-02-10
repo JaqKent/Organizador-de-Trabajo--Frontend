@@ -4,7 +4,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Props {
-    label: string;
+    label?: string;
     icon: IconProp;
     onClick?: () => void;
     variant?: string;

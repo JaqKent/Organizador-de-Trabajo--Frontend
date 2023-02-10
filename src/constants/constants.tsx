@@ -7,16 +7,13 @@ import OrderNumber from '~components/WorkOrders/OrderNumber';
 export const WORKITEMS = [
     {
         id: 1,
-        title1: 'N° de orden',
-        event1: 'N° de orden',
-        title2: 'Descripcion /Fecha de Apertura / Modificacion',
-        event2: 'Descripcion / Fecha de Apertura / Modificacion',
-        title3: 'Designación / Estado y Observaciones',
-        event3: 'Designación / Estado y Observaciones',
-        defaultEvent: 'N° de orden',
-        children1: <OrderNumber />,
-        children2: <CustomDescription />,
-        children3: <Designation />,
+        title1: 'Descripcion /Fecha de Apertura / Modificacion',
+        event1: 'Descripcion ',
+        title2: 'Designación / Estado y Observaciones',
+        event2: 'Designación',
+        defaultEvent: 'Designación',
+        children1: <CustomDescription />,
+        children2: <Designation />,
     },
 ];
 

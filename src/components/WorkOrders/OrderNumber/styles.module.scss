@@ -2,7 +2,7 @@
 @import '~scss/variable';
 
 .container {
-    @include flex(center, center, row);
+    @include flex(center, center, column);
     gap: 20px;
     height: 100px;
 }
