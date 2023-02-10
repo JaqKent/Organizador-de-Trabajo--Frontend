@@ -2,24 +2,34 @@
 @import '~scss/variable';
 
 .container {
-    @include flex(space-around, center, row);
-    gap: 20px;
-
+    @include flex(flex-start, center, row);
 }
 
-.editor {
-    background-color: white !important;
 
+.tabs {
+    width: 65vw;
 }
 
-.commentContainer {
-    height: 50vh;
-    width: 60vw;
+.tabContent {
+    position: absolute;
+    top: 90px;
+    left: 30%;
+}
+
+.listGroup {
     overflow-y: auto;
+    height: 70vh;
+}
+
+.orders {
+    @include flex(space-between, center, row);
+    gap: 70px;
 
 }
 
-.low {
+.button {
     @include flex(center, center, column);
-    gap: 15px;
+    height: 23px;
+    width: 23px;
+
 }

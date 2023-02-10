@@ -4,14 +4,14 @@ import Tabs from 'react-bootstrap/Tabs';
 
 interface Props {
     title1: string;
-    children1?: React.ReactNode;
+    children1: React.ReactNode;
     event1: string;
-    title2: string;
+    title2?: string;
     children2?: React.ReactNode;
-    event2: string;
-    title3: string;
+    event2?: string;
+    title3?: string;
     children3?: React.ReactNode;
-    event3: string;
+    event3?: string;
     title4?: string;
     children4?: React.ReactNode;
     event4?: string;

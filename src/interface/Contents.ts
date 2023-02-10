@@ -6,6 +6,11 @@ export interface Content {
     img: string;
     comment: string;
 }
+export interface Order {
+    id?: string;
+    text: string;
+    numberLink?: string;
+}
 
 export interface Description {
     id?: string;
