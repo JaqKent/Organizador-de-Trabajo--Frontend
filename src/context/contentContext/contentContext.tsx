@@ -10,7 +10,6 @@ interface ContextProps {
     content: Content[];
     description: Description[];
     order: Order[];
-
     addContent: (newContent: any) => void;
     addDescription: (newContent: any) => void;
     addOrder: (newContent: any) => void;

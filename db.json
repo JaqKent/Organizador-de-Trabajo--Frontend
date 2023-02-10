@@ -15,7 +15,12 @@
       "id": 4
     }
   ],
-  "description": [],
+  "description": [
+    {
+      "text": "<p>dsfsdf sdfsd </p>",
+      "id": 1
+    }
+  ],
   "order": [
     {
       "text": "orden 001111212",
