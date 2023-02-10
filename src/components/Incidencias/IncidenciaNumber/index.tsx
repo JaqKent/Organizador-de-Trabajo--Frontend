@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useContext, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useContext, useState } from 'react';
 import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './styles.module.scss';
@@ -7,7 +7,7 @@ import ButtonWithIcon from '~components/ButtonWithIcon';
 import CustomModal from '~components/CustomModal';
 import ContentContext from '~context/contentContext/contentContext';
 
-function OrderNumber() {
+function IncidenciaNumber() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -62,5 +62,4 @@ function OrderNumber() {
         </>
     );
 }
-
-export default OrderNumber;
+export default IncidenciaNumber;

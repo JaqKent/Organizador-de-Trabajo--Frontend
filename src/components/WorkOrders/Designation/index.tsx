@@ -4,7 +4,8 @@ import { useContext, useState } from 'react';
 import ReactQuill from 'react-quill';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
-import CustomDesignation from './Components/CustomDesignation';
+import CustomDesignation from '../../CustomDesignation';
+
 import { SELECT_DESIGNATION } from './constants';
 
 import 'react-quill/dist/quill.snow.css';

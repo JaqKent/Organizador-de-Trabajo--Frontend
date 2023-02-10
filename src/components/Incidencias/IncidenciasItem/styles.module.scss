@@ -1,0 +1,35 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(flex-start, center, row);
+}
+
+
+.tabs {
+    width: 65vw;
+}
+
+.tabContent {
+    position: absolute;
+    top: 90px;
+    left: 30%;
+}
+
+.listGroup {
+    overflow-y: auto;
+    height: 70vh;
+}
+
+.orders {
+    @include flex(space-between, center, row);
+    gap: 70px;
+
+}
+
+.button {
+    @include flex(center, center, column);
+    height: 23px;
+    width: 23px;
+
+}

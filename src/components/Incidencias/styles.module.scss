@@ -1,0 +1,9 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(flex-start, flex-start, column);
+    width: 100vw;
+    padding: 20px;
+    gap: 20px;
+}
