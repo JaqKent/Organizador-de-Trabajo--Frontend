@@ -4,9 +4,9 @@ import Form from 'react-bootstrap-v5/lib/esm/Form';
 import styles from './styles.module.scss';
 
 interface Props {
-    label: string;
-    value1: string;
-    value2: string;
+    label?: string;
+    value1?: string;
+    value2?: string;
     value3?: string;
     value4?: string;
     value5?: string;

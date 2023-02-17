@@ -11,13 +11,13 @@ import { INCIDENCIAS, PANELLINKS } from '~constants/constants';
 import ContentContext from '~context/contentContext/contentContext';
 
 function IncidenciasItem() {
-    const { order, deleteOrder } = useContext(ContentContext);
+    const { incidencia, deleteIncidencia } = useContext(ContentContext);
     return (
         <div className={styles.container}>
             <Tab.Container id="list-group-tabs-example" defaultActiveKey="#1">
                 <Col sm={12}>
                     <ListGroup className={styles.listGroup}>
-                        {order.map((item) => (
+                        {incidencia.map((item) => (
                             <ListGroup.Item
                                 action
                                 href={`#${item.numberLink.toString()}`}
@@ -29,7 +29,9 @@ function IncidenciasItem() {
                                         className={styles.button}
                                         variant="danger"
                                         icon={faClose}
-                                        onClick={() => deleteOrder(item.id)}
+                                        onClick={() =>
+                                            deleteIncidencia(item.id)
+                                        }
                                     />
                                 </div>
                             </ListGroup.Item>

@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 import ContentContext from '~context/contentContext/contentContext';
 
 function CommentBox({ item }) {
-    const { deleteContent } = useContext(ContentContext);
+    const { deleteContent, editContent } = useContext(ContentContext);
     return (
         <div className={styles.comment}>
             <div className={styles.top}>
@@ -28,7 +28,7 @@ function CommentBox({ item }) {
                 </div>
                 <div className={styles.editClose}>
                     <div>
-                        <button type="button">
+                        <button type="button" onClick={() => editContent(item)}>
                             <FontAwesomeIcon icon={faEdit} />
                         </button>
                     </div>

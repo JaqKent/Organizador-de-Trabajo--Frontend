@@ -1,6 +1,7 @@
 import Designation from '../components/WorkOrders/Designation';
 
-import CustomDescription from '~components/WorkOrders/Description';
+import IncidenciaDescription from '~components/Incidencias/IncidenciaDescription';
+import OrderDescription from '~components/WorkOrders/OrderDescription/Index';
 
 export const WORKITEMS = [
     {
@@ -10,7 +11,7 @@ export const WORKITEMS = [
         title2: 'Designación / Estado y Observaciones',
         event2: 'Designación',
         defaultEvent: 'Designación',
-        children1: <CustomDescription />,
+        children1: <OrderDescription />,
         children2: <Designation />,
     },
 ];
@@ -23,7 +24,7 @@ export const INCIDENCIAS = [
         title2: 'Designación / Estado y Observaciones',
         event2: 'Designación',
         defaultEvent: 'Designación',
-        children1: <CustomDescription />,
+        children1: <IncidenciaDescription />,
         children2: <Designation />,
     },
 ];

@@ -26,11 +26,11 @@ function OrderNumber() {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (text.trim().length > 6) {
-            const newDescription = {
+            const newOrder = {
                 text,
                 numberLink,
             };
-            addOrder(newDescription);
+            addOrder(newOrder);
             setText('');
             numberLink.toString();
         }

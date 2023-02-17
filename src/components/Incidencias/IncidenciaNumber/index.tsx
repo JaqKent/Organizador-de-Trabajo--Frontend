@@ -12,7 +12,7 @@ function IncidenciaNumber() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const { addOrder } = useContext(ContentContext);
+    const { addIncidencia } = useContext(ContentContext);
     const [text, setText] = useState('');
     const [numberLink, setNumberLink] = useState(0);
 
@@ -26,11 +26,11 @@ function IncidenciaNumber() {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (text.trim().length > 6) {
-            const newDescription = {
+            const newIncidencia = {
                 text,
                 numberLink,
             };
-            addOrder(newDescription);
+            addIncidencia(newIncidencia);
             setText('');
             numberLink.toString();
         }
@@ -46,17 +46,17 @@ function IncidenciaNumber() {
                     handleClose();
                     handleLinkNumber();
                 }}
-                label="Nueva Orden"
-                title="Agregar Orden"
+                label="Nueva Incidencia"
+                title="Agregar Incidencia"
             />
             <div className={styles.container}>
                 <ButtonWithIcon
-                    label="Agregar Orden"
+                    label="Agregar Incidencia"
                     icon={faPlus}
                     onClick={handleShow}
                 />
                 <div>
-                    <ButtonWithIcon label="Editar Orden" icon={faEdit} />
+                    <ButtonWithIcon label="Editar Incidencia" icon={faEdit} />
                 </div>
             </div>
         </>
