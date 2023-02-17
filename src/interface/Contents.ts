@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-types */
 export interface Content {
-    id?: string;
+    id: number;
     user: string;
     date: string;
     img: string;
     comment: string;
+}
+export interface ContentEdit {
+    item: Content[] | null;
+    edit: boolean;
 }
 export interface Order {
     id?: string;
@@ -15,4 +19,9 @@ export interface Order {
 export interface Description {
     id?: string;
     text: string;
+}
+export interface Incidencia {
+    id?: string;
+    text: string;
+    numberLink?: string;
 }

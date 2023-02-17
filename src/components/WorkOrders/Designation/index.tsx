@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
-import CustomDesignation from './Components/CustomDesignation';
+import CustomDesignation from '../../CustomDesignation';
+
 import { SELECT_DESIGNATION } from './constants';
 
 import 'react-quill/dist/quill.snow.css';
@@ -15,20 +16,22 @@ import CommentBox from '~components/comment';
 import ContentContext from '~context/contentContext/contentContext';
 
 function Designation() {
-    const { content, addContent } = useContext(ContentContext);
+    const { content, addContent, contentEdit, updateContent } =
+        useContext(ContentContext);
     const [comment, setComment] = useState('');
     const [date, setDate] = useState('2023-01-01');
     const [user, setUser] = useState('DefaultUser');
     const [img, setImg] = useState(
         'https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg'
     );
+
     const handleChange = (value: string) => {
         setComment(value);
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (comment.trim().length > 10) {
+        if (comment.trim().length > 5) {
             const newContent = {
                 comment,
                 date,
@@ -39,6 +42,14 @@ function Designation() {
             setComment('');
         }
     };
+
+    useEffect(() => {
+        if (contentEdit[0]?.edit === true && contentEdit[0]?.item !== null) {
+            if (!Array.isArray(contentEdit[0].item)) {
+                setComment(contentEdit[0].item.comment);
+            }
+        }
+    }, [contentEdit]);
 
     return (
         <>

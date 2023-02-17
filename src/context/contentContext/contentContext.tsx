@@ -1,45 +1,65 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable no-alert */
-/* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-alert */
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { Content, Description, Order } from 'interface/Contents';
+import {
+    Content,
+    ContentEdit,
+    Description,
+    Incidencia,
+    Order,
+} from 'interface/Contents';
 
 interface ContextProps {
     content: Content[];
+    incidencia: Incidencia[];
     description: Description[];
     order: Order[];
-
+    contentEdit: ContentEdit[];
     addContent: (newContent: any) => void;
+    addIncidencia: (newContent: any) => void;
     addDescription: (newContent: any) => void;
     addOrder: (newContent: any) => void;
     deleteContent: (content: any) => void;
+    deleteIncidencia: (content: any) => void;
     deleteDescription: (content: any) => void;
     deleteOrder: (content: any) => void;
+    editContent: (content: Content[] | null) => void;
+    updateContent: (id: number, updItem: Content) => void;
 }
 
 const ContentContext = createContext<ContextProps>({
+    incidencia: [],
     content: [],
     description: [],
     order: [],
+    contentEdit: [],
     addContent: () => {},
+    addIncidencia: () => {},
     addDescription: () => {},
     addOrder: () => {},
     deleteContent: () => {},
+    deleteIncidencia: () => {},
     deleteDescription: () => {},
     deleteOrder: () => {},
+    editContent: () => {},
+    updateContent: () => {},
 });
 
 export function ContentProvider({ children }: { children: ReactNode }) {
     /*     const [isLoading, setIsLoading] = useState(true); */
-    const [content, setContent] = useState([]);
+    const [content, setContent] = useState<Content[]>([]);
     const [description, setDescription] = useState([]);
     const [order, setOrder] = useState([]);
-    /*     const [contentEdit, setContentEdit] = useState({
-        item: {},
-        edit: false,
-    }); */
+    const [incidencia, setIncidencia] = useState([]);
+    const [contentEdit, setContentEdit] = useState<ContentEdit[]>([
+        {
+            item: null,
+            edit: false,
+        },
+    ]);
+
     useEffect(() => {
         fetchContent();
     }, []);
@@ -49,6 +69,9 @@ export function ContentProvider({ children }: { children: ReactNode }) {
 
     useEffect(() => {
         fetchDescription();
+    }, []);
+    useEffect(() => {
+        fetchIncidencia();
     }, []);
     const fetchContent = async () => {
         const response = await fetch(`http://localhost:3000/content`);
@@ -65,8 +88,13 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         const data = await response.json();
         setOrder(data);
     };
+    const fetchIncidencia = async () => {
+        const response = await fetch(`http://localhost:3000/incidencia`);
+        const data = await response.json();
+        setIncidencia(data);
+    };
 
-    const addContent = async (newContent: any[]) => {
+    const addContent = async (newContent: Content) => {
         const response = await fetch('http://localhost:3000/content', {
             method: 'POST',
             headers: {
@@ -77,7 +105,18 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         const data = await response.json();
         setContent([data, ...content]);
     };
-    const addDescription = async (newDescription: any[]) => {
+    const addIncidencia = async (newContent: never[]) => {
+        const response = await fetch('http://localhost:3000/incidencia', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newContent),
+        });
+        const data = await response.json();
+        setIncidencia([data, ...incidencia]);
+    };
+    const addDescription = async (newDescription: never[]) => {
         const response = await fetch('http://localhost:3000/description', {
             method: 'POST',
             headers: {
@@ -88,7 +127,7 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         const data = await response.json();
         setDescription([data, ...description]);
     };
-    const addOrder = async (newDescription: any[]) => {
+    const addOrder = async (newDescription: never[]) => {
         const response = await fetch('http://localhost:3000/order', {
             method: 'POST',
             headers: {
@@ -123,11 +162,48 @@ export function ContentProvider({ children }: { children: ReactNode }) {
             setOrder(order.filter((item) => item.id !== id));
         }
     };
+    const deleteIncidencia = async (id: number) => {
+        if (window.confirm('¿Seguro que quieres borrar la incidencia?')) {
+            await fetch(`http://localhost:3000/incidencia/${id}`, {
+                method: 'DELETE',
+            });
+            setIncidencia(incidencia.filter((item) => item.id !== id));
+        }
+    };
+    const updateContent = async (id: number, updItem: Content) => {
+        const response = await fetch(
+            `http://localhost:3000/content/${id}${id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updItem),
+            }
+        );
+        const data = await response.json();
+
+        setContent((prevContent) =>
+            prevContent.map((item) => (item.id === id ? data : item))
+        );
+    };
+
+    const editContent = (item: Content[] | null) => {
+        setContentEdit([
+            {
+                item,
+                edit: true,
+            },
+        ]);
+    };
 
     return (
         <ContentContext.Provider
             value={{
                 addContent,
+                incidencia,
+                addIncidencia,
+                deleteIncidencia,
                 order,
                 addOrder,
                 deleteOrder,
@@ -136,6 +212,9 @@ export function ContentProvider({ children }: { children: ReactNode }) {
                 deleteContent,
                 addDescription,
                 deleteDescription,
+                editContent,
+                updateContent,
+                contentEdit,
             }}
         >
             {children}

@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useContext, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useContext, useState } from 'react';
 import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './styles.module.scss';
@@ -7,12 +7,12 @@ import ButtonWithIcon from '~components/ButtonWithIcon';
 import CustomModal from '~components/CustomModal';
 import ContentContext from '~context/contentContext/contentContext';
 
-function OrderNumber() {
+function IncidenciaNumber() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const { addOrder } = useContext(ContentContext);
+    const { addIncidencia } = useContext(ContentContext);
     const [text, setText] = useState('');
     const [numberLink, setNumberLink] = useState(0);
 
@@ -26,11 +26,11 @@ function OrderNumber() {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (text.trim().length > 6) {
-            const newOrder = {
+            const newIncidencia = {
                 text,
                 numberLink,
             };
-            addOrder(newOrder);
+            addIncidencia(newIncidencia);
             setText('');
             numberLink.toString();
         }
@@ -46,21 +46,20 @@ function OrderNumber() {
                     handleClose();
                     handleLinkNumber();
                 }}
-                label="Nueva Orden"
-                title="Agregar Orden"
+                label="Nueva Incidencia"
+                title="Agregar Incidencia"
             />
             <div className={styles.container}>
                 <ButtonWithIcon
-                    label="Agregar Orden"
+                    label="Agregar Incidencia"
                     icon={faPlus}
                     onClick={handleShow}
                 />
                 <div>
-                    <ButtonWithIcon label="Editar Orden" icon={faEdit} />
+                    <ButtonWithIcon label="Editar Incidencia" icon={faEdit} />
                 </div>
             </div>
         </>
     );
 }
-
-export default OrderNumber;
+export default IncidenciaNumber;

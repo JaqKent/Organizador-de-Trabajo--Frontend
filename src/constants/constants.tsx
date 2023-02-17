@@ -1,8 +1,7 @@
 import Designation from '../components/WorkOrders/Designation';
 
-import IncidenciasItem from '~components/Incidencias/IncidenciasItem';
-import CustomDescription from '~components/WorkOrders/Description';
-import OrderNumber from '~components/WorkOrders/OrderNumber';
+import IncidenciaDescription from '~components/Incidencias/IncidenciaDescription';
+import OrderDescription from '~components/WorkOrders/OrderDescription/Index';
 
 export const WORKITEMS = [
     {
@@ -12,7 +11,7 @@ export const WORKITEMS = [
         title2: 'Designación / Estado y Observaciones',
         event2: 'Designación',
         defaultEvent: 'Designación',
-        children1: <CustomDescription />,
+        children1: <OrderDescription />,
         children2: <Designation />,
     },
 ];
@@ -20,16 +19,13 @@ export const WORKITEMS = [
 export const INCIDENCIAS = [
     {
         id: 1,
-        title1: 'N° de Incidencia',
-        event1: 'N° de Incidencia',
-        title2: 'Descripcion / Criticidad /Fecha de Apertura / Modificacion',
-        event2: 'Descripcion / Criticidad /Fecha de Apertura / Modificacion',
-        title3: 'Designación / Estado y Observaciones',
-        event3: 'Designación / Estado y Observaciones',
-        defaultEvent: 'N° de Incidencia',
-        children1: <IncidenciasItem />,
-        children2: <CustomDescription />,
-        children3: <Designation />,
+        title1: 'Descripcion / Criticidad /Fecha de Apertura / Modificacion',
+        event1: 'Descripcion',
+        title2: 'Designación / Estado y Observaciones',
+        event2: 'Designación',
+        defaultEvent: 'Designación',
+        children1: <IncidenciaDescription />,
+        children2: <Designation />,
     },
 ];
 export const PANELLINKS = [
