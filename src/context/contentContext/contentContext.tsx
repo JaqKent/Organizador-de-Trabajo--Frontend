@@ -171,16 +171,13 @@ export function ContentProvider({ children }: { children: ReactNode }) {
         }
     };
     const updateContent = async (id: number, updItem: Content) => {
-        const response = await fetch(
-            `http://localhost:3000/content/${id}${id}`,
-            {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(updItem),
-            }
-        );
+        const response = await fetch(`http://localhost:3000/content/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updItem),
+        });
         const data = await response.json();
 
         setContent((prevContent) =>
