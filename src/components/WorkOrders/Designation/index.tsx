@@ -12,7 +12,7 @@ import 'react-quill/dist/quill.snow.css';
 import styles from './styles.module.scss';
 
 import ButtonWithIcon from '~components/ButtonWithIcon';
-import CommentBox from '~components/comment';
+import CommentBox from '~components/CommentBox';
 import ContentContext from '~context/contentContext/contentContext';
 
 function Designation() {

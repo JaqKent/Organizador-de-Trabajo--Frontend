@@ -25,3 +25,14 @@ export interface Incidencia {
     text: string;
     numberLink?: string;
 }
+export interface Week {
+    id?: string;
+    text: string;
+    numberLink?: string;
+    categoy: string;
+}
+export interface CRQ {
+    id?: string;
+    text: string;
+    numberLink?: string;
+}

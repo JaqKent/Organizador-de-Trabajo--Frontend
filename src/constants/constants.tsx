@@ -28,6 +28,23 @@ export const INCIDENCIAS = [
         children2: <Designation />,
     },
 ];
+
+export const WINDOWS = [
+    {
+        id: 1,
+        title1: 'Solicitante / Descripcion/ Estado y fecha de Implementacion',
+        event1: 'Solicitante',
+        title2: 'Ultimo Update / Urgencia / Tipo y Dueño CRQ',
+        event2: 'Update',
+        title3: 'Ejecutor de Tarea/ Controla / Nueva URL o Flujo/ Grupo Soporte',
+        event3: 'Ejecutor',
+        title4: 'Pruebas Post(Grupo Remedy) / Afectacion IDP / Impacto - Notificacion / Componente',
+        event4: 'Pruebas',
+        defaultEvent: 'Solicitante',
+        children1: <IncidenciaDescription />,
+        children2: <Designation />,
+    },
+];
 export const PANELLINKS = [
     {
         id: 1,

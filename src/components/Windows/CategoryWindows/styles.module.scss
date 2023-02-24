@@ -1,0 +1,7 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex(center, center, row);
+    gap: 20px;
+}

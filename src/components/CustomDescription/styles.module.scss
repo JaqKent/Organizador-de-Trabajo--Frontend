@@ -3,8 +3,7 @@
 
 .container {
     @include flex(space-around, center, column);
-    gap: 20px;
-    height: 80vh;
+    gap: 50px;
 }
 
 .low {
@@ -20,4 +19,5 @@
 .dates {
     @include flex(space-around, center, row);
     gap: 20px;
+
 }

@@ -1,6 +1,7 @@
 import Incidencias from '~components/Incidencias';
 import LogIn from '~components/screens/Auth/LogIn';
 import LogOut from '~components/screens/Auth/LogOut';
+import Windows from '~components/Windows';
 import WorkOrders from '~components/WorkOrders';
 
 export const ROUTES = [
@@ -26,6 +27,11 @@ export const ROUTES = [
     },
     {
         id: 4,
+        path: '/ventanas',
+        element: <Windows />,
+    },
+    {
+        id: 5,
         path: '/logout',
         element: <LogOut />,
     },

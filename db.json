@@ -13,13 +13,6 @@
       "user": "DefaultUser",
       "img": "https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg",
       "id": 2
-    },
-    {
-      "comment": "<p>comentario nuevo 222</p>",
-      "date": "2023-01-01",
-      "user": "DefaultUser",
-      "img": "https://thumbs.dreamstime.com/z/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg",
-      "id": 3
     }
   ],
   "description": [
@@ -50,6 +43,47 @@
       "text": "INC000112",
       "numberLink": 2,
       "id": 6
+    }
+  ],
+  "week": [
+    {
+      "text": "15/46/9772",
+      "numberLink": 1,
+      "category": {
+        "category": 0,
+        "categoryString": "1"
+      },
+      "id": 9
+    },
+    {
+      "text": "15/15/1555",
+      "numberLink": 2,
+      "category": {
+        "category": 0,
+        "categoryString": "0"
+      },
+      "id": 10
+    },
+    {
+      "text": "12/12/1991",
+      "numberLink": 3,
+      "category": {
+        "category": 0,
+        "categoryString": "2"
+      },
+      "id": 11
+    }
+  ],
+  "crq": [
+    {
+      "id": 1,
+      "text": "crq001111",
+      "numberLink": 3
+    },
+    {
+      "text": "crq001235",
+      "numberLink": 1,
+      "id": 2
     }
   ]
 }

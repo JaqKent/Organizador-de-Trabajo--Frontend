@@ -1,0 +1,26 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.container {
+    @include flex (center, center, column);
+    background-color: #0d6efd;
+    padding-top: 5px;
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+
+    &:hover {
+        background-color: darken(#0d6efd, 10%);
+    }
+
+    &:active {
+        background-color: lighten(#0d6efd, 10%);
+    }
+
+    &:focus {
+        background-color: lighten(#0d6efd, 10%);
+    }
+}
