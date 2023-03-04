@@ -55,9 +55,6 @@ function AddCRQ() {
                     icon={faPlus}
                     onClick={handleShow}
                 />
-                <div>
-                    <ButtonWithIcon label="Editar CRQ" icon={faEdit} />
-                </div>
             </div>
         </>
     );
