@@ -1,0 +1,14 @@
+@import '~scss/mixins';
+@import '~scss/variable';
+
+.button {
+    @include flex(center, center, column);
+    height: 23px;
+    width: 23px;
+
+}
+
+.acordeon {
+    @include flex(space-between, center, row);
+    gap: 20px;
+}

@@ -15,7 +15,7 @@ function NavBar() {
         navigate('/incidencias');
     };
     const handleCronograma = () => {
-        navigate('/');
+        navigate('/ventanas');
     };
     const handleAlarmas = () => {
         navigate('/');
@@ -34,10 +34,7 @@ function NavBar() {
                     <Nav.Link onClick={handleIncidencias} href="#Incidencias">
                         Incidencias
                     </Nav.Link>
-                    <Nav.Link
-                        onClick={handleCronograma}
-                        href="#Cronograma de Ventanas"
-                    >
+                    <Nav.Link onClick={handleCronograma} href="#Ventanas">
                         Cronograma de Ventanas
                     </Nav.Link>
                     <Nav.Link onClick={handleAlarmas} href="#Alarmas">

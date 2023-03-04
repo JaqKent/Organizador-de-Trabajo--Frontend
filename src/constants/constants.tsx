@@ -1,5 +1,6 @@
 import Designation from '../components/WorkOrders/Designation';
 
+import CustomEditableTabs from '~components/CustomEditableTab';
 import IncidenciaDescription from '~components/Incidencias/IncidenciaDescription';
 import OrderDescription from '~components/WorkOrders/OrderDescription/Index';
 
@@ -25,6 +26,20 @@ export const INCIDENCIAS = [
         event2: 'Designación',
         defaultEvent: 'Designación',
         children1: <IncidenciaDescription />,
+        children2: <Designation />,
+    },
+];
+
+export const WINDOWS = [
+    {
+        id: 1,
+        title1: 'Solicitante / Estado y fecha de Implementacion...',
+        event1: 'Solicitante',
+        title2: 'Ultimo Update',
+        event2: 'Update',
+
+        defaultEvent: 'Solicitante',
+        children1: <CustomEditableTabs />,
         children2: <Designation />,
     },
 ];
