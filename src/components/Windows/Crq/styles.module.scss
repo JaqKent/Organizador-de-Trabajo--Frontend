@@ -27,6 +27,16 @@
 
 }
 
+.listItem {
+    display: -webkit-box;
+    max-width: 350px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
 .button {
     @include flex(center, center, column);
     height: 23px;

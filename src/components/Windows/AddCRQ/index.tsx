@@ -46,12 +46,12 @@ function AddCRQ() {
                     handleClose();
                     handleLinkNumber();
                 }}
-                label="Nuevo CRQ"
-                title="Agregar CRQ"
+                label="Descripcion"
+                title="Agregar Descripcion"
             />
             <div className={styles.container}>
                 <ButtonWithIcon
-                    label="Agregar CRQ"
+                    label="Agregar Descripcion"
                     icon={faPlus}
                     onClick={handleShow}
                 />

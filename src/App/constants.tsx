@@ -35,4 +35,5 @@ export const ROUTES = [
         path: '/logout',
         element: <LogOut />,
     },
+    { id: 6, path: '/category/:id', element = <CategoryScreen /> },
 ];

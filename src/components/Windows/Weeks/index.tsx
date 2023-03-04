@@ -81,9 +81,6 @@ function Weeks() {
                     icon={faPlus}
                     onClick={handleShow}
                 />
-                <div>
-                    <ButtonWithIcon label="Editar Semana" icon={faEdit} />
-                </div>
             </div>
         </>
     );

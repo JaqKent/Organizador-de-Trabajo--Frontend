@@ -9,7 +9,6 @@ import AddCRQ from '../AddCRQ';
 import styles from './styles.module.scss';
 
 import ButtonWithIcon from '~components/ButtonWithIcon';
-import CustomEditableTabs from '~components/CustomEditableTab';
 import CustomTabs from '~components/CustomTabs';
 import { PANELLINKS, WINDOWS } from '~constants/constants';
 import ContentContext from '~context/contentContext/contentContext';
@@ -25,6 +24,7 @@ function CRQ() {
                         <AddCRQ />
                         {crq.map((item) => (
                             <ListGroup.Item
+                                className={styles.listItem}
                                 action
                                 href={`#${item.numberLink.toString()}`}
                                 key={item.id}
@@ -47,7 +47,20 @@ function CRQ() {
                         {PANELLINKS.map((link) => (
                             <Tab.Pane eventKey={link.eventKey} key={link.id}>
                                 <div className={styles.tabs}>
-                                    <CustomEditableTabs />
+                                    <div className={styles.tabs}>
+                                        {WINDOWS.map((item) => (
+                                            <CustomTabs
+                                                title1={item.title1}
+                                                event1={item.event1}
+                                                title2={item.title2}
+                                                event2={item.event2}
+                                                defaultEvent={item.defaultEvent}
+                                                key={item.id}
+                                                children1={item.children1}
+                                                children2={item.children2}
+                                            />
+                                        ))}
+                                    </div>
                                 </div>
                             </Tab.Pane>
                         ))}

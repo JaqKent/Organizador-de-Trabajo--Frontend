@@ -11,7 +11,7 @@ function CategoryWindows() {
     const navigate = useNavigate();
 
     const handleSelect = (id: number) => {
-        navigate(`/`);
+        navigate(`/category/${id}`);
 
         setCurrentSelected(id);
     };

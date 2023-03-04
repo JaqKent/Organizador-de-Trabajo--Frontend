@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import CRQ from '../Crq';
 
@@ -22,6 +22,12 @@ function WindowsItems() {
                     >
                         <div className={styles.acordeon}>
                             <Accordion.Header>{weekItem.text}</Accordion.Header>
+                            <ButtonWithIcon
+                                className={styles.button}
+                                variant="primary"
+                                icon={faEdit}
+                                onClick={() => console.log('edit')}
+                            />
                             <ButtonWithIcon
                                 className={styles.button}
                                 variant="danger"
